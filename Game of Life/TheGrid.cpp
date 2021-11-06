@@ -1,7 +1,7 @@
 #include "TheGrid.h"
 
 
-void TheGrid::alive_rules(int (&arr)[9])
+void TheGrid::alive_rules(const int (&arr)[9])
 {
 	for(int i=0;i<9;i++)
 	{
@@ -9,7 +9,7 @@ void TheGrid::alive_rules(int (&arr)[9])
 			alive_condition.emplace_back(i);
 	}
 }
-void TheGrid::birth_rules(int (&arr)[9])
+void TheGrid::birth_rules(const int (&arr)[9])
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -17,7 +17,7 @@ void TheGrid::birth_rules(int (&arr)[9])
 			birth_condition.emplace_back(i);
 	}
 }
-TheGrid::TheGrid(int& h, int& w)
+TheGrid::TheGrid(const int& h,const int& w)
 {
 	height = h; width = w;
 }
