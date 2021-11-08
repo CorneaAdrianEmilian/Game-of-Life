@@ -2,25 +2,26 @@
 #include <iostream>
 #include <Windows.h>
 
+
 int main()
 {
 	int height = 0, width = 0, turns = 0;
 	std::cout << "Insert height, width of the grid and number of turns\n";
 	std::cin >> height >> width >> turns;
 	std::string intermediate;
-	int alive_rules[9];
-	int birth_rules[9];
+	std::array<int, 9>alive_rules;
+	std::array<int, 9>birth_rules;
 	std::cout << "Insert 9 not space separated binary integers, the condition of surviving of a living cell (0: dies, 1: stays alive). \n";
 	std::cin >> intermediate;
 	for (int i = 0; i < 9; i++) {
 		std::string temp = intermediate.substr(i, 1);
-		alive_rules[i] = std::stoi(temp);
+		alive_rules.at(i) = std::stoi(temp);
 	}
 	std::cout << "Insert 9 not space separated binary integers, the condition of birth of a dead cell (0: stays dead, 1: birth).\n";
 	std::cin >> intermediate;
 	for (int i = 0; i < 9; i++) {
 		std::string temp = intermediate.substr(i, 1);
-		birth_rules[i] = std::stoi(temp);
+		birth_rules.at(i) = std::stoi(temp);
 	}
 	std::unique_ptr<TheGrid> lifeGame = std::make_unique<TheGrid>(height,width);
 	lifeGame->alive_rules(alive_rules);

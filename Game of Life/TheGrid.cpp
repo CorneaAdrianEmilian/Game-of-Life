@@ -1,7 +1,7 @@
 #include "TheGrid.h"
 
 
-void TheGrid::alive_rules(const int (&arr)[9])
+void TheGrid::alive_rules(const std::array<int, 9>& arr)
 {
 	for(int i=0;i<9;i++)
 	{
@@ -9,7 +9,7 @@ void TheGrid::alive_rules(const int (&arr)[9])
 			alive_condition.emplace_back(i);
 	}
 }
-void TheGrid::birth_rules(const int (&arr)[9])
+void TheGrid::birth_rules(const std::array<int, 9>& arr)
 {
 	for (int i = 0; i < 9; i++)
 	{

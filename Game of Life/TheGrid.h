@@ -4,6 +4,7 @@
 #include <vector>
 #include <memory>
 #include "mapIDX.h"
+#include <array>
 
 class TheGrid 
 {
@@ -20,9 +21,9 @@ class TheGrid
 public:
 	TheGrid(const int& h,const int& w);
 	//method that generates the rules by which a cell survives based on the indexes where it finds 1
-	void alive_rules(const int (&arr)[9]);
+	void alive_rules(const std::array<int,9> &arr);
 	//method that generates the rules by which a dead cell revives based on the indexes where it finds 1
-	void birth_rules(const int (&arr)[9]);
+	void birth_rules(const std::array<int, 9>& arr);
 	//method to insert the map
 	void gridMaker();
 	//based on the survive rules it determinate if a curent alive cell dies or not
